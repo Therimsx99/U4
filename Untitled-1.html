@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turismo en Puebla</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            padding-bottom: 80px;
+        }
+        header {
+            background-color: #0055A4;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+        }
+        .card {
+            background-color: #fff;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card img {
+            width: 100%;
+            max-height: 200px; /* Ajuste de altura máxima */
+            object-fit: cover; /* Recorta la imagen para ajustarla */
+            border-radius: 8px;
+        }
+        .menu {
+            display: flex;
+            justify-content: space-around;
+            background-color: #0055A4;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+        }
+        .menu a:hover {
+            color: #FFD700;
+        }
+        .button {
+            display: inline-block;
+            background-color: #FFD700;
+            color: #0055A4;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+            text-align: center;
+        }
+        .button:hover {
+            background-color: #FFC300;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Pantalla de Inicio -->
+<header>
+    <h1>Explora Puebla</h1>
+</header>
+<div class="container">
+    <div class="card">
+        <img src="imagen1.jpg" alt="Imagen 1: Vista panorámica de Puebla">
+        <p>¡Bienvenido a Puebla! Descubre los mejores destinos turísticos, rutas gastronómicas y eventos en nuestra app.</p>
+        <a href="#" class="button">Explora Puebla</a>
+    </div>
+</div>
+
+<!-- Menú inferior -->
+<div class="menu">
+    <a href="#">Inicio</a>
+    <a href="#">Destinos</a>
+    <a href="#">Eventos</a>
+    <a href="#">Favoritos</a>
+    <a href="#">Perfil</a>
+</div>
+
+<!-- Pantalla de Destinos Populares -->
+<div class="container">
+    <h2>Destinos Populares</h2>
+    <div class="card">
+        <img src="imagen2.jpg" alt="Imagen 2: Cholula">
+        <h3>Cholula</h3>
+        <p>Explora la gran pirámide de Cholula y sus increíbles vistas.</p>
+        <a href="#" class="button">Ver más</a>
+    </div>
+    <div class="card">
+        <img src="imagen3.jpg" alt="Imagen 3: Atlixco">
+        <h3>Atlixco</h3>
+        <p>Disfruta del mejor clima y las coloridas flores de Atlixco.</p>
+        <a href="#" class="button">Ver más</a>
+    </div>
+</div>
+
+<!-- Pantalla de Detalle del Destino -->
+<div class="container">
+    <h2>Detalles del Destino</h2>
+    <div class="card">
+        <img src="imagen4.jpg" alt="Imagen 4: Catedral de Puebla">
+        <h3>Catedral de Puebla</h3>
+        <p>Conoce la majestuosa arquitectura y la historia detrás de esta icónica catedral.</p>
+        <a href="#" class="button">Agregar a Favoritos</a>
+    </div>
+</div>
+
+<!-- Pantalla de Búsqueda -->
+<div class="container">
+    <h2>Buscar Destinos</h2>
+    <input type="text" placeholder="Buscar destinos..." style="width: 100%; padding: 10px; margin-bottom: 20px;">
+    <p>Resultados sugeridos:</p>
+    <ul>
+        <li>Cholula</li>
+        <li>Atlixco</li>
+        <li>Africam Safari</li>
+    </ul>
+</div>
+
+<!-- Pantalla de Calendario de Eventos -->
+<div class="container">
+    <h2>Eventos en Puebla</h2>
+    <div class="card">
+        <img src="imagen5.jpg" alt="Imagen 5: Feria de Puebla">
+        <h3>Feria de Puebla</h3>
+        <p>Disfruta de la mejor feria del año con espectáculos, comida y más.</p>
+        <a href="#" class="button">Ver detalles</a>
+    </div>
+</div>
+
+<!-- Pantalla de Rutas Gastronómicas -->
+<div class="container">
+    <h2>Rutas Gastronómicas</h2>
+    <div class="card">
+        <img src="imagen6.jpg" alt="Imagen 6: Mole Poblano">
+        <h3>Mole Poblano</h3>
+        <p>Descubre los mejores lugares para disfrutar el tradicional mole poblano.</p>
+        <a href="#" class="button">Ver ruta completa</a>
+    </div>
+</div>
+
+
+<!-- Pantalla de Itinerario Personalizado -->
+<div class="container">
+    <h2>Planificador de Viaje</h2>
+    <form>
+        <label for="presupuesto">Selecciona tu presupuesto:</label>
+        
+        <!-- Escala numérica con un control de rango -->
+        <input type="range" id="presupuestoRange" min="100" max="1000" step="50" value="500" style="width: 100%;" oninput="actualizarPresupuesto(this.value)">
+        
+        <!-- Campo para mostrar el valor numérico -->
+        <input type="number" id="presupuestoNumero" min="100" max="1000" step="50" value="500" style="width: 100%; margin-top: 10px;" oninput="actualizarRango(this.value)">
+
+        <a href="#" class="button">Generar Itinerario</a>
+    </form>
+</div>
+
+<script>
+    // Sincroniza el valor del control de rango con el campo numérico
+    function actualizarPresupuesto(valor) {
+        document.getElementById('presupuestoNumero').value = valor;
+    }
+
+    // Sincroniza el valor del campo numérico con el control de rango
+    function actualizarRango(valor) {
+        document.getElementById('presupuestoRange').value = valor;
+    }
+</script>
+
+<!-- Pantalla de Favoritos -->
+<div class="container">
+    <h2>Mis Favoritos</h2>
+    <ul>
+        <li>Cholula <a href="#" class="button">Eliminar</a></li>
+        <li>Atlixco <a href="#" class="button">Eliminar</a></li>
+    </ul>
+</div>
+
+<!-- Pantalla de Perfil del Usuario -->
+<div class="container">
+    <h2>Mi Perfil</h2>
+    <p>Nombre: Juan Pérez</p>
+    <a href="#" class="button">Editar Perfil</a>
+    <a href="#" class="button">Cerrar Sesión</a>
+</div>
+
+<!-- Pantalla de Ayuda y Soporte -->
+<div class="container">
+    <h2>Ayuda y Soporte</h2>
+    <p>¿Tienes alguna pregunta? Consulta nuestras preguntas frecuentes o contáctanos.</p>
+    <a href="#" class="button">Chat en Vivo</a>
+</div>
+	<!-- Pantalla de Retroalimentación -->
+<div class="container">
+    <h2>Tu Opinión es Importante</h2>
+    <form>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required>
+
+        <label for="rating">Calificación:</label>
+        <select id="rating" name="rating" required>
+            <option value="">Selecciona una calificación</option>
+            <option value="5">5 - Excelente</option>
+            <option value="4">4 - Muy Bueno</option>
+            <option value="3">3 - Bueno</option>
+            <option value="2">2 - Regular</option>
+            <option value="1">1 - Malo</option>
+        </select>
+
+        <label for="comentarios">Comentarios:</label>
+        <textarea id="comentarios" name="comentarios" rows="4" placeholder="Escribe tus comentarios aquí..." required></textarea>
+
+        <button type="submit">Enviar Retroalimentación</button>
+    </form>
+</div>
+
+
+</body>
+</html>
